@@ -1,5 +1,5 @@
 <?php
-    $directory = " / User / Active Users";
+    $directory = " / Account Management / Active Users";
     $bar_whois_active = "activeusers";
 
 	session_name('faschat');

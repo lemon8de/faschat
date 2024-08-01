@@ -1,5 +1,5 @@
 <?php
-    $directory = " / User / Users For Approval";
+    $directory = " / Account Management / Users For Approval";
     $bar_whois_active = "forapprovaluser";
 
 	session_name('faschat');
