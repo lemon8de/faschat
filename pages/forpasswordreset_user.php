@@ -1,6 +1,6 @@
 <?php
-    $directory = " / Account Management / Users For Approval";
-    $bar_whois_active = "forapprovaluser";
+    $directory = " / Account Management / Password Reset Requests";
+    $bar_whois_active = "forpasswordreset";
 
 	session_name('faschat');
 	session_start();
@@ -24,7 +24,7 @@
             <div class="content-wrapper">
                 <div class="content-header">
                     <div class="container-fluid">
-                        <?php include 'forapproval_user_content.php'?>
+                        <?php include 'forpasswordreset_user_content.php'?>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
 </html>
 
 <script>
-    let ForApprovalUserTable = new DataTable('#ForApprovalUserTable');
+    let ForPasswordResetUserTable = new DataTable('#ForPasswordResetUserTable');
 </script>	
 
 <script>
@@ -58,15 +58,15 @@
 </script>
 <?php
 //alerting after an api redirect
-    if (isset($_SESSION['user_approved'])) {
+    if (isset($_SESSION['reset_password_approved'])) {
         echo "
         <script>
         Toast.fire({
             icon: 'success',
-            title: '" . $_SESSION['user_approved'] . "',
+            title: '" . $_SESSION['reset_password_approved'] . "',
         })
         </script>
         ";
-        $_SESSION['user_approved'] = null;
+        $_SESSION['reset_password_approved'] = null;
     }
 ?>

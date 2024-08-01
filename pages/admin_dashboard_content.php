@@ -31,13 +31,13 @@
     <div class="col-lg-4 col-6">
         <div class="small-box bg-danger">
             <div class="inner">
-                <h3>0</h3>
+                <h3><?php echo $_SESSION['user_passwordreset']; $_SESSION['user_passwordreset'] = null;?></h3>
                 <p>Requests for Password Reset</p>
             </div>
             <div class="icon">
                 <i class="fas fa-user-slash"></i>
             </div>
-                <a href="#" class="small-box-footer">
+                <a href="forpasswordreset_user.php" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
         </div>

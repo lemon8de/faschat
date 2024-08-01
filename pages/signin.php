@@ -93,6 +93,8 @@
         </script>
         ";
         $_SESSION['logout_success'] = null;
+        session_unset();
+        session_destroy();
     }
     if (isset($_SESSION['reset_password_success'])) {
         echo "

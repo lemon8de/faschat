@@ -31,7 +31,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="" class="nav-link">
+							<a href="forpasswordreset_user.php" class="nav-link<?php echo ($bar_whois_active == "forpasswordreset" ? ' active': '');?>">
 								<i class="fas fa-users"></i>
 								<p>Password Reset Requests</p>
 							</a>
