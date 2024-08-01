@@ -10,24 +10,21 @@
     $comment = "";
     $inner_html = "";
 
-    $sql_exposed = "SELECT username, exposed FROM user_accounts WHERE username LIKE '$username%' AND exposed = '1' AND username <> '$exclude_self'";
+    $sql_exposed = "SELECT username, exposed, approved FROM user_accounts WHERE approved = '1' AND username LIKE '$username%' AND exposed = '1' AND username <> '$exclude_self'";
     $stmt_exposed = $conn->prepare($sql_exposed);
     $stmt_exposed->execute();
     // if its only one, log it for lock on check
     //if not just add them to inner_html
+    foreach($stmt_exposed->fetchALL() as $x){
+        $inner_html .= "<p>" . $x['username'] . "</p>";
+    }
     if ($stmt_exposed->rowCount() == 1) {
-        foreach($stmt_exposed->fetchALL() as $x){
-            $inner_html .= "<p>" . $x['username'] . "</p>";
-        }
         $comment = "<p class='text-muted'>Lock-On Initiated!! Press Enter to FasChat!</p>";
     } else {
         $comment = "<p class='text-muted'>Refine your search and lock-on to one FasTag!</p>";
-        foreach($stmt_exposed->fetchALL() as $x){
-            $inner_html .= "<p>" . $x['username'] . "</p>";
-        }
     }
 
-    $sql_unique = "SELECT username, exposed FROM user_accounts WHERE username = '$username' and exposed = '0'";
+    $sql_unique = "SELECT username, exposed, approved FROM user_accounts WHERE approved = '1' AND username = '$username' and exposed = '0'";
     $stmt_unique = $conn->prepare($sql_unique);
     $stmt_unique->execute();
     //this unique is designed to only display one, its just what it does
