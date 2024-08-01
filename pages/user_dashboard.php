@@ -25,7 +25,7 @@
                 </div>
             </div>
             <footer class="main-footer">
-                <strong>ADI PHP Systems</strong>
+                <strong>FasChat</strong>
                 Development State.
                 <div class="float-right d-none d-sm-inline-block">
                     <b>Version</b> 1.0.0
@@ -33,6 +33,9 @@
             </footer>
             <?php include '../php_static/scripts-rels.php'?>
         </div>
+
+        <!-- modals -->
+        <?php require '../modals/adduser_modal.php';?>
     </body>
 </html>
 
@@ -60,5 +63,16 @@
         </script>
         ";
         $_SESSION['login_attempt_success'] = null;
+    }
+    if (isset($_SESSION['update_consent_success'])) {
+        echo "
+        <script>
+        Toast.fire({
+            icon: 'success',
+            title: '" . $_SESSION['update_consent_success'] . "',
+        })
+        </script>
+        ";
+        $_SESSION['update_consent_success'] = null;
     }
 ?>

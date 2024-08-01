@@ -4,7 +4,7 @@
 	<ul class="navbar-nav">
 	<li class="nav-item">
 		<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars">
-			</i><span>&nbsp;ADI PHP Systems <?php echo $directory;?></span>
+			</i><span>&nbsp;FasChat <?php echo $directory;?></span>
 		</a>
 	</li>
 	</ul>

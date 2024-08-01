@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>PHP Systems Sign-in</title>
+		<title>FasChat Sign-in</title>
 
 		<?php include '../php_static/link-rels.php';?>
 	</head>
@@ -16,7 +16,7 @@
 		<div class="login-box">
 			<div class="login-logo">
 				<img src="../static/img/faschat.png" style="height:150px;">
-				<h2><b>PHP<br>Systems</b></h2>
+				<h2><b>FasChat</b></h2>
 			</div>
 			<!-- /.login-logo -->
 			<div class="card">
