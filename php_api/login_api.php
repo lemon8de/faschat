@@ -2,16 +2,7 @@
     session_name("faschat");
     session_start();
 
-    //database
-    date_default_timezone_set('Asia/Manila');
-    $servername = 'localhost'; $username = 'root'; $password = '';
-    try {
-        $conn = new PDO ("mysql:host=$servername;dbname=faschat_db",$username,$password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e) {
-        echo 'NO CONNECTION'.$e->getMessage();
-    }
-    //end database
+    require 'db_connection.php';
 
     if (isset($_POST['Login'])) {
         $username = $_POST['username'];

@@ -5,4 +5,5 @@
 <link rel="stylesheet" href="../static/css/adminlte.min.css">
 <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
 <link rel="stylesheet" href="../plugins/sweetalert2/dist/sweetalert2.min.css">
+<link rel="stylesheet" href="../plugins/datatables/datatables.css">
 <!-- END Link Rels -->

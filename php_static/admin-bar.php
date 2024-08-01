@@ -8,18 +8,24 @@
 		<nav class="mt-2">
 			<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 				<li class="nav-item">
-					<a href="admin_dashboard.php" class="nav-link<?php echo ($bar_whois_active == "admindashboard" ? ' active': '');?>">
-						<i class="nav-icon fas fa-bus"></i><p>Dashboard</p><i class="fas fa-angle-left right"></i>
+					<a href="admin_dashboard.php" class="nav-link">
+						<i class="nav-icon fas fa-bus"></i><p>Account Management</p><i class="fas fa-angle-left right"></i>
 					</a>
 					<ul class="nav nav-treeview" style="display: none;">
 						<li class="nav-item">
-							<a href="" class="nav-link">
+							<a href="admin_dashboard.php" class="nav-link<?php echo ($bar_whois_active == "admindashboard" ? ' active': '');?>">
+								<i class="fas fa-user"></i>
+								<p>Dashboard</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="active_user.php" class="nav-link<?php echo ($bar_whois_active == "activeusers" ? ' active': '');?>">
 								<i class="fas fa-user"></i>
 								<p>Active Users</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="" class="nav-link">
+							<a href="forapproval_user.php" class="nav-link<?php echo ($bar_whois_active == "forapprovaluser" ? ' active': '');?>">
 								<i class="fas fa-user-slash"></i>
 								<p>Users For Approval</p>
 							</a>

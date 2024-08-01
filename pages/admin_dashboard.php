@@ -1,5 +1,5 @@
 <?php
-    $directory = " / Dashboard";
+    $directory = " / Account Management / Dashboard";
     $bar_whois_active = "admindashboard";
 
 	session_name('faschat');
@@ -14,7 +14,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>ADI Systems</title>
+        <title>FasChat</title>
         <?php include '../php_static/link-rels.php'?>
     </head>
     <body class="sidebar-mini layout-fixed">

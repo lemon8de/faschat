@@ -1,10 +1,14 @@
 <?php
-    $directory = " / Dashboard";
-    $bar_whois_active = "userdashboard";
-    session_name('faschat');
-    session_start();
-?>
+    $directory = " / User / Users For Approval";
+    $bar_whois_active = "forapprovaluser";
 
+	session_name('faschat');
+	session_start();
+
+	if ($_SESSION['site_role'] <> "ADMIN") {
+		header('location: ../pages/signin.php');
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,11 +20,11 @@
     <body class="sidebar-mini layout-fixed">
         <div class="wrapper">
             <?php include '../php_static/nav-bar.php'?>
-            <?php include '../php_static/user-bar.php'?>
+            <?php include '../php_static/admin-bar.php'?>
             <div class="content-wrapper">
                 <div class="content-header">
                     <div class="container-fluid">
-                        <?php include 'user_dashboard_content.php'?>
+                        <?php include 'forapproval_user_content.php'?>
                     </div>
                 </div>
             </div>
@@ -37,6 +41,10 @@
 </html>
 
 <script>
+    let ActiveUserTable = new DataTable('#ForApprovalUserTable');
+</script>	
+
+<script>
     const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -50,15 +58,15 @@
 </script>
 <?php
 //alerting after an api redirect
-    if (isset($_SESSION['login_attempt_success'])) {
+    if (isset($_SESSION['user_approved'])) {
         echo "
         <script>
         Toast.fire({
             icon: 'success',
-            title: '" . $_SESSION['login_attempt_success'] . "',
+            title: '" . $_SESSION['user_approved'] . "',
         })
         </script>
         ";
-        $_SESSION['login_attempt_success'] = null;
+        $_SESSION['user_approved'] = null;
     }
 ?>

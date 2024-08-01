@@ -9,7 +9,7 @@
             <div class="icon">
                 <i class="fas fa-user"></i>
             </div>
-                <a href="#" class="small-box-footer">
+                <a href="active_user.php" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
         </div>
@@ -23,7 +23,7 @@
             <div class="icon">
                 <i class="fas fa-user-slash"></i>
             </div>
-                <a href="#" class="small-box-footer">
+                <a href="forapproval_user.php" class="small-box-footer">
                     More info <i class="fas fa-arrow-circle-right"></i>
                 </a>
         </div>
