@@ -21,36 +21,12 @@
 			<!-- /.login-logo -->
 			<div class="card">
 				<div class="card-body login-card-body">
-					<p class="login-box-msg"><b>Register an account</b></p>
-					<?php include '../forms/register_form.php';?>
+					<p class="login-box-msg"><b>Request for Password Reset</b></p>
+					<?php include '../forms/resetpassword_form.php';?>
 				</div>
 			</div>
 		</div>
 		<?php include '../php_static/scripts-rels.php';?>
 	</body>
 </html>
-<script>
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        customClass: {
-            popup: 'colored-toast',
-        },
-        showConfirmButton: false,
-        timer: 2000,
-        timerProgressBar: true,
-    })
-</script>
-<?php
-if (isset($_SESSION['registration_failed'])) {
-        echo "
-        <script>
-        Toast.fire({
-            icon: 'error',
-            title: '" . $_SESSION['registration_failed'] . "',
-        })
-        </script>
-        ";
-        $_SESSION['registration_failed'] = null;
-    }
-?>
+

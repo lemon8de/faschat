@@ -2,7 +2,7 @@
     $directory = " / Dashboard";
     $bar_whois_active = "admindashboard";
 
-	session_name('adi-php-systems');
+	session_name('faschat');
 	session_start();
 
 	if ($_SESSION['site_role'] <> "ADMIN") {

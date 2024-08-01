@@ -1,6 +1,11 @@
 <?php 
 	session_name('faschat');
 	session_start();
+	
+	if (!isset($_SESSION['action_reset_password'])) {
+		header('location: ../pages/signin.php');
+		exit;
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,8 +26,8 @@
 			<!-- /.login-logo -->
 			<div class="card">
 				<div class="card-body login-card-body">
-					<p class="login-box-msg"><b>Register an account</b></p>
-					<?php include '../forms/register_form.php';?>
+					<p class="login-box-msg"><b>Reset Password Approved. Update your credentials</b></p>
+					<?php include '../forms/actionresetpassword_form.php';?>
 				</div>
 			</div>
 		</div>
@@ -42,15 +47,17 @@
     })
 </script>
 <?php
-if (isset($_SESSION['registration_failed'])) {
+//alerting after an api redirect
+    if (isset($_SESSION['update_password_failed'])) {
         echo "
         <script>
         Toast.fire({
             icon: 'error',
-            title: '" . $_SESSION['registration_failed'] . "',
+            title: '" . $_SESSION['update_password_failed'] . "',
         })
         </script>
         ";
-        $_SESSION['registration_failed'] = null;
+        $_SESSION['update_password_failed'] = null;
     }
 ?>
+

@@ -1,6 +1,8 @@
 <?php 
-	session_name('adi-php-systems');
+	session_name('faschat');
 	session_start();
+
+    $_SESSION['action_reset_password'] = null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +30,13 @@
 						<div class="col">
 							<a href="register.php">
 								<button type="button" class="btn bg-info btn-block">Register</button>
+							</a>
+						</div>
+					</div>
+					<div class="row mb-2">
+						<div class="col">
+							<a href="resetpassword.php">
+								<button type="button" class="btn bg-danger btn-block">Reset Password</button>
 							</a>
 						</div>
 					</div>
@@ -63,17 +72,6 @@
         ";
         $_SESSION['login_attempt_failed'] = null;
     }
-    if (isset($_SESSION['registration_failed'])) {
-        echo "
-        <script>
-        Toast.fire({
-            icon: 'error',
-            title: '" . $_SESSION['registration_failed'] . "',
-        })
-        </script>
-        ";
-        $_SESSION['registration_failed'] = null;
-    }
     if (isset($_SESSION['registration_success'])) {
         echo "
         <script>
@@ -94,8 +92,50 @@
         })
         </script>
         ";
-		session_unset();
-		session_destroy();
         $_SESSION['logout_success'] = null;
+    }
+    if (isset($_SESSION['reset_password_success'])) {
+        echo "
+        <script>
+        Toast.fire({
+            icon: 'success',
+            title: '" . $_SESSION['reset_password_success'] . "',
+        })
+        </script>
+        ";
+        $_SESSION['reset_password_success'] = null;
+    }
+    if (isset($_SESSION['reset_password_failed'])) {
+        echo "
+        <script>
+        Toast.fire({
+            icon: 'error',
+            title: '" . $_SESSION['reset_password_failed'] . "',
+        })
+        </script>
+        ";
+        $_SESSION['reset_password_failed'] = null;
+    }
+    if (isset($_SESSION['update_password_success'])) {
+        echo "
+        <script>
+        Toast.fire({
+            icon: 'info',
+            title: '" . $_SESSION['update_password_success'] . "',
+        })
+        </script>
+        ";
+        $_SESSION['update_password_success'] = null;
+    }
+    if (isset($_SESSION['reset_password_not_approved'])) {
+        echo "
+        <script>
+        Toast.fire({
+            icon: 'info',
+            title: '" . $_SESSION['reset_password_not_approved'] . "',
+        })
+        </script>
+        ";
+        $_SESSION['reset_password_not_approved'] = null;
     }
 ?>

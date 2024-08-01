@@ -1,7 +1,7 @@
 <?php
     $directory = " / Dashboard";
     $bar_whois_active = "userdashboard";
-    session_name('adi-php-systems');
+    session_name('faschat');
     session_start();
 ?>
 

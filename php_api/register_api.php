@@ -1,12 +1,12 @@
 <?php 
-    session_name("adi-php-systems");
+    session_name("faschat");
     session_start();
 
     //database
     date_default_timezone_set('Asia/Manila');
     $servername = 'localhost'; $username = 'root'; $password = '';
     try {
-        $conn = new PDO ("mysql:host=$servername;dbname=adiphp_systems",$username,$password);
+        $conn = new PDO ("mysql:host=$servername;dbname=faschat_db",$username,$password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $e) {
         echo 'NO CONNECTION'.$e->getMessage();
@@ -26,12 +26,12 @@
 
         if ($stmt->rowCount() > 0) {
             $_SESSION['registration_failed'] = "Username already taken";
-            header('location: ../pages/signin.php');
+            header('location: ../pages/register.php');
             exit;
         }
         if ($password <> $confirmpassword) {
             $_SESSION['registration_failed'] = "Password do not match";
-            header('location: ../pages/signin.php');
+            header('location: ../pages/register.php');
             exit;
         }
 

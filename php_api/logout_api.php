@@ -1,5 +1,5 @@
 <?php
-    session_name('adi-php-systems');
+    session_name('faschat');
     session_start();
 
     $_SESSION['logout_success'] = "User logged out successfully";
