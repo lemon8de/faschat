@@ -1,5 +1,5 @@
 <?php
-    $directory = " / FasChat / Chat";
+    $directory = " / Chat";
     $bar_whois_active = "unused_variable";
     session_name('faschat');
     session_start();
@@ -28,8 +28,11 @@
                             } else if (isset($_SESSION['proceed_handshake'])) {
                                 $_SESSION['proceed_handshake'] = null;
                                 include 'proceed_handshake.php';
-                            } else {
+                            } else if (isset($_SESSION['proceed_chat'])) {
+                                $_SESSION['proceed_chat'] = null;
                                 include 'chat_main_content.php';
+                            } else {
+                                include 'we_block_refreshes.php';
                             }
                          ?>
                     </div>

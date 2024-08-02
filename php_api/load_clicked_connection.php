@@ -3,7 +3,9 @@
     session_name('faschat');
     session_start();
 
-    $chat_id = $_POST['chat_id'];
+    //$chat_id = $_POST['chat_id'];
+    $chat_id = isset($_POST['chat_id']) ? $_POST['chat_id'] : $_SESSION['chat_id_afterconsenting'];
+    $_SESSION['chat_id_afterconsenting'] = null;
     //here the user clicked the chat head or is redirected after pressing enter on the fas chat modal
     // if (isset($_SESSION['chat_creation_lastid'])) {
     //     //api was called when you clicked enter
@@ -28,9 +30,14 @@
             } else {
                 // have to display a click to consent and handshake
                 $_SESSION['proceed_handshake'] = true;
+                $_SESSION['updateconsent_chat_id'] = $x['id'];
                 $person = $x['initiator'];
             }
+        } else {
+            $person = $x['initiator'] == $_SESSION['username'] ? $x['to_handshake'] : $x['initiator'];
+            $_SESSION['proceed_chat'] = true;
         }
+        $_SESSION['person'] = $person;
         $_SESSION['loaded_chat_connection'] = "Successfully loaded chat connection with " . $person;
     }
     header('location: ../pages/chat_main.php');
