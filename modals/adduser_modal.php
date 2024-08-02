@@ -65,9 +65,13 @@
             dataType: 'json',
             success: function (response) {
                 if (response.success) {
-                    console.log('connection made');
+                    window.location.href = "chat_main.php";
                 } else {
                     console.log('request failed');
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Connection failed. FasChat Duplicate? Invalid Username?',
+                    })
                 }
             }
         });

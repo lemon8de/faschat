@@ -40,7 +40,11 @@
         $sql = "INSERT INTO connections_solo (users, to_handshake, initiator) VALUES ('$users','$to_handshake','$exclude_self')";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
+        $chat_id = $conn->lastInsertId();
         $connection = true;
+
+        $_SESSION['chat_id'] = $chat_id;
+        $_SESSION['connection_made'] = "Locked-ON and ready to FasChat!";
     } else {
         //this connection is a duplicate, do not proceed
     }
