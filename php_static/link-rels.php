@@ -1,5 +1,5 @@
 <!-- Link Rels -->
-<link rel="icon" href="../static/img/faschat.png" type="image/x-icon" />
+<link rel="icon" href="../static/img/faschat2.png" type="image/x-icon" />
 <link rel="stylesheet" href="../static/css/font.min.css">
 <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
 <link rel="stylesheet" href="../static/css/adminlte.min.css">

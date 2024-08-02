@@ -13,7 +13,7 @@
     $stmt->execute();
     $_SESSION['user_toapprove'] = $stmt->rowCount();
 
-    $sql = "SELECT id FROM user_accounts WHERE reset_password = '0'";
+    $sql = "SELECT id FROM user_accounts WHERE reset_password = '1'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $_SESSION['user_passwordreset'] = $stmt->rowCount();

@@ -20,7 +20,7 @@
 	<body class="hold-transition login-page">
 		<div class="login-box">
 			<div class="login-logo">
-				<img src="../static/img/faschat.png" style="height:150px;">
+				<img src="../static/img/faschat2.png" style="height:150px;">
 				<h2><b>FasChat</b></h2>
 			</div>
 			<!-- /.login-logo -->

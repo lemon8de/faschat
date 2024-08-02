@@ -1,7 +1,7 @@
 <!-- User Bar -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 	<a href="#" class="brand-link">
-		<img src="../static/img/faschat.png" alt="Logo" class="brand-image elevation-3">
+		<img src="../static/img/faschat2.png" alt="Logo" class="brand-image elevation-3">
 		<span class="brand-text font-weight-light">&nbsp;USER</span>
 	</a>
 	<div class="sidebar">

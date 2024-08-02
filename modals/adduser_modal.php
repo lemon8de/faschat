@@ -54,7 +54,6 @@
 
     $('#AddUserForm').submit(function(e){
         e.preventDefault();
-        console.log('faschat!');
 
         var username_to_search = document.getElementById("AddUserInputModal").value;
         $.ajax({
@@ -66,10 +65,9 @@
             dataType: 'json',
             success: function (response) {
                 if (response.success) {
-                    //success
+                    console.log('connection made');
                 } else {
-                    //handle errors
-                    //console.log("error");
+                    console.log('request failed');
                 }
             }
         });
