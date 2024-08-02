@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-sm-12">
         <h2>Welcome to FasChat!</h2>
+        <h3 class="text-muted">Click 'Add a FasTag' on the left to chat a user</h3>
     </div>
 </div>
 

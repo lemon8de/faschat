@@ -10,7 +10,7 @@
 
     //getting the username of the person to faschat
     $sql = "SELECT user_accounts.username, user_accounts.approved 
-        FROM user_accounts WHERE approved = '1' AND username = '$username' AND username <> '$exclude_self'";
+        FROM user_accounts WHERE approved = '1' AND username LIKE '$username%' AND username <> '$exclude_self'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 

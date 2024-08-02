@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2024 at 11:29 AM
+-- Generation Time: Aug 03, 2024 at 01:19 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -47,7 +47,8 @@ INSERT INTO `connections_solo` (`id`, `users`, `to_handshake`, `handshake`, `ini
 (31, '[\"useraccount3\",\"lemon8de\"]', 'lemon8de', 1, 'useraccount3', '2024-08-02 15:59:28.40'),
 (32, '[\"useraccount1\",\"ally\"]', 'ally', 1, 'useraccount1', '2024-08-02 16:41:04.83'),
 (33, '[\"sen\",\"lemon8de\"]', 'lemon8de', 0, 'sen', '2024-08-02 16:43:46.68'),
-(34, '[\"sen\",\"useraccount1\"]', 'useraccount1', 1, 'sen', '2024-08-02 16:44:59.04');
+(34, '[\"sen\",\"useraccount1\"]', 'useraccount1', 1, 'sen', '2024-08-02 16:44:59.04'),
+(35, '[\"jayandrew_it-system\",\"lemon8de\"]', 'lemon8de', 0, 'jayandrew_it-system', '2024-08-03 07:18:22.89');
 
 -- --------------------------------------------------------
 
@@ -219,7 +220,7 @@ ALTER TABLE `user_accounts`
 -- AUTO_INCREMENT for table `connections_solo`
 --
 ALTER TABLE `connections_solo`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `messages_solo`

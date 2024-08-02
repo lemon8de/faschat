@@ -2,7 +2,7 @@
     <div class="col-12">
         <div class="card direct-chat direct-chat-primary">
             <div class="card-body">
-                <div class="direct-chat-messages" id="DirectChatBox">
+                <div class="direct-chat-messages" id="DirectChatBox" style="min-height:65vh;">
                     <!-- <div class="direct-chat-msg">
                         <div class="direct-chat-infos clearfix">
                             <span class="direct-chat-name float-left">lemon8de&nbsp;&nbsp;</span>
