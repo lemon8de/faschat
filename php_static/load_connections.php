@@ -35,5 +35,9 @@
                 </li>
             </form>
         ';
+        $last_chat_id = $x['id'];
+    }
+    if (!isset($last_chat_id)) {
+        $last_chat_id = "";
     }
 ?>
