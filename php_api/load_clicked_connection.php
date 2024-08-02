@@ -40,5 +40,6 @@
         $_SESSION['person'] = $person;
         $_SESSION['loaded_chat_connection'] = "Successfully loaded chat connection with " . $person;
     }
+    $_SESSION['main_chat_id'] = $chat_id;
     header('location: ../pages/chat_main.php');
 ?>

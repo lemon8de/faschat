@@ -54,6 +54,36 @@
 </html>
 
 <script>
+$('#SendTextForm').submit(function(e){
+        e.preventDefault();
+
+        var send_chat_id = document.getElementById('FasChatInputBoxID').value;
+        var send_chat_message = document.getElementById('FasChatInputBoxMSG').value;
+        var request_body = {
+            'chat_id' : send_chat_id,
+            'message' : send_chat_message,
+        }
+        console.log(request_body);
+        $.ajax({
+            url: '../php_api/send_message.php',
+            type: 'POST',
+            data: request_body,
+            dataType: 'json',
+            success: function (response) {
+                if (response.success) {
+                    console.log(response);
+                    document.getElementById('DirectChatBox').insertAdjacentHTML('beforeend', response.blue_box_html);
+                    document.getElementById('DirectChatBox').scrollTop = document.getElementById('DirectChatBox').scrollHeight;
+                    document.getElementById('FasChatInputBoxMSG').value = "";
+                } else {
+                    //handle errors
+                }
+            }
+        });
+    });
+</script>
+
+<script>
     const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',

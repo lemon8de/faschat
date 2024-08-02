@@ -2,9 +2,8 @@
     <div class="col-12">
         <div class="card direct-chat direct-chat-primary">
             <div class="card-body">
-                <div class="direct-chat-messages">
-
-                    <div class="direct-chat-msg">
+                <div class="direct-chat-messages" id="DirectChatBox">
+                    <!-- <div class="direct-chat-msg">
                         <div class="direct-chat-infos clearfix">
                             <span class="direct-chat-name float-left">lemon8de&nbsp;&nbsp;</span>
                             <span class="direct-chat-timestamp float-left">Now</span>
@@ -24,26 +23,18 @@
                         <div class="direct-chat-text float-right">
                             Yes I abide by the rules and regulations of this website. May copy ka ng rules?
                         </div>
-                    </div>
-                    <div class="direct-chat-msg">
-                        <div class="direct-chat-infos clearfix">
-                            <span class="direct-chat-name float-left">lemon8de&nbsp;&nbsp;</span>
-                            <span class="direct-chat-timestamp float-left">Now</span>
-                        </div>
-                        <img class="direct-chat-img" src="../static/img/user_image.jpeg" alt="message user image">
-                        <div class="direct-chat-text float-left">
-                            wala
-                        </div>
-                    </div>
+                    </div> -->
+                    <?php include '../php_static/load_historical_messages.php';?>
                 </div>
             </div>
 
             <div class="card-footer">
-                <form action="#" method="post">
+                <form id="SendTextForm">
                     <div class="input-group">
-                        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                        <input type="hidden" id="FasChatInputBoxID" readonly name="chat_id" value="<?php echo $_SESSION['main_chat_id'];?>">
+                        <input type="text" id="FasChatInputBoxMSG" name="message" placeholder="Type Message ..." class="form-control" autocomplete="off">
                         <span class="input-group-append">
-                            <button type="button" class="btn btn-primary">Send</button>
+                            <button type="submit" class="btn btn-primary">Send</button>
                         </span>
                     </div>
                 </form>
