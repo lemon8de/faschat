@@ -65,7 +65,7 @@
             dataType: 'json',
             success: function (response) {
                 if (response.success) {
-                    window.location.href = "chat_main.php";
+                    window.location.href = "user_dashboard.php";
                 } else {
                     console.log('request failed');
                     Toast.fire({

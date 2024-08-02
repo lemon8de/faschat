@@ -1,16 +1,15 @@
+<table id="ForPasswordResetUserTable">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Site Role</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+<tbody id="ForPasswordResetUserTable">
 <?php 
     require '../php_api/db_connection.php';
-    echo '
-        <table id="ForPasswordResetUserTable">
-            <thead>
-                <tr>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>Site Role</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-        <tbody id="ForPasswordResetUserTable">';
     // MySQL
     $sql = "SELECT id, username, password, reset_password, site_role FROM user_accounts WHERE reset_password = '1'";
     $stmt = $conn->prepare($sql);
@@ -31,9 +30,7 @@
             </tr>
         ';
     }
-    echo '
-        </tbody>
-    </table>
-    </div>
-    ';
 ?>
+    </tbody>
+</table>
+</div>

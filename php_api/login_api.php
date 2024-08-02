@@ -2,6 +2,9 @@
     session_name("faschat");
     session_start();
 
+    //just to make sure
+    $_SESSION['$chat_creation_lastid'] = null;
+
     require 'db_connection.php';
 
     if (isset($_POST['Login'])) {

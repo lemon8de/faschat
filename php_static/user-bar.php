@@ -17,6 +17,7 @@
 						<i class="nav-icon fas fa-user"></i><p>Add a FasTag</p>
 					</a>
 				</li>
+				<?php include 'load_connections.php';?>
 				<li class="nav-item">
 					<a href="../php_api/logout_api.php" class="nav-link">
 						<i class="nav-icon fas fa-arrow-circle-left"></i><p>Logout</p>

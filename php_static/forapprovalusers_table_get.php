@@ -1,16 +1,15 @@
+<table id="ForApprovalUserTable">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Site Role</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+<tbody id="ForApprovalUserTableBody">
 <?php 
     require '../php_api/db_connection.php';
-    echo '
-        <table id="ForApprovalUserTable">
-            <thead>
-                <tr>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>Site Role</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-        <tbody id="ForApprovalUserTableBody">';
     // MySQL
     $sql = "SELECT id, username, password, approved, site_role FROM user_accounts WHERE approved = '0'";
     $stmt = $conn->prepare($sql);
@@ -31,9 +30,7 @@
             </tr>
         ';
     }
-    echo '
-        </tbody>
-    </table>
-    </div>
-    ';
 ?>
+    </tbody>
+</table>
+</div>

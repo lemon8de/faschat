@@ -40,10 +40,11 @@
         $sql = "INSERT INTO connections_solo (users, to_handshake, initiator) VALUES ('$users','$to_handshake','$exclude_self')";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
-        $chat_id = $conn->lastInsertId();
+        //this is sketchy, i'm disabling it for now. it only aims to proceed automatically to the chat page
+        //$chat_creation_lastid = $conn->lastInsertId();
         $connection = true;
 
-        $_SESSION['chat_id'] = $chat_id;
+        //$_SESSION['chat_creation_lastid'] = $chat_creation_lastid;
         $_SESSION['connection_made'] = "Locked-ON and ready to FasChat!";
     } else {
         //this connection is a duplicate, do not proceed

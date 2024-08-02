@@ -1,15 +1,14 @@
+<table id="ActiveUserTable">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Site Role</th>
+        </tr>
+    </thead>
+<tbody id="ActiveUserTableBody">
 <?php 
     require '../php_api/db_connection.php';
-    echo '
-        <table id="ActiveUserTable">
-            <thead>
-                <tr>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>Site Role</th>
-                </tr>
-            </thead>
-        <tbody id="ActiveUserTableBody">';
     // MySQL
     $sql = "SELECT username, password, site_role FROM user_accounts";
     $stmt = $conn->prepare($sql);
@@ -24,9 +23,8 @@
             </tr>
         ';
     }
-    echo '
-        </tbody>
-    </table>
-    </div>
-    ';
+?>
+    </tbody>
+</table>
+</div>
 ?>
