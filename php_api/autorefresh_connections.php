@@ -6,6 +6,7 @@
     $username = $_SESSION['username'];
     $id = $_POST['last_connection'];
 
+
     $sql = "SELECT * FROM connections_solo WHERE id > '$id' AND JSON_CONTAINS(connections_solo.users, '\"$username\"')";
     $stmt = $conn->prepare($sql);
     $stmt->execute();

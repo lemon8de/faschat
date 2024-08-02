@@ -42,3 +42,33 @@
         </div>
     </div>
 </div>
+<!-- this should be the last white chat of the conversation -->
+<input type="hidden" readonly id="last_chatmessage_id" value="<?php echo $last_whitechat_id;?>">
+<input type="hidden" readonly id="oncurrent_chat_page_id" value="<?php echo $_SESSION['main_chat_id'];?>">
+
+<script>
+	//disgusting autoloading api
+	setInterval(refresh_connection, 5000);
+	function refresh_connection() {
+		var last_whitechat_id = document.getElementById('last_chatmessage_id').value;
+        var oncurrent_page_chatid = document.getElementById('oncurrent_chat_page_id').value;
+		$.ajax({
+            url: '../php_api/autorefresh_chat.php',
+            type: 'POST',
+			data: {
+				"message_id" : last_whitechat_id,
+                "chat_id" : oncurrent_page_chatid,
+			},
+            dataType: 'json',
+            success: function (response) {
+                if (response.success) {
+                    document.getElementById('DirectChatBox').insertAdjacentHTML('beforeend', response.inner_html);
+                    document.getElementById('DirectChatBox').scrollTop = document.getElementById('DirectChatBox').scrollHeight;
+                    document.getElementById('last_chatmessage_id').value = response.last_chat_id;
+                } else {
+					//console.log('none');
+                }
+            }
+        });
+	}
+</script>

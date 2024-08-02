@@ -67,7 +67,7 @@
                 if (response.success) {
                     window.location.href = "user_dashboard.php";
                 } else {
-                    console.log('request failed');
+                    //console.log('request failed');
                     Toast.fire({
                         icon: 'error',
                         title: 'Connection failed. FasChat Duplicate? Invalid Username?',

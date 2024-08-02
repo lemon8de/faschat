@@ -53,7 +53,7 @@
 					document.getElementById('FasTagsList').insertAdjacentHTML('beforeend', response.inner_html);
 					document.getElementById('last_loaded_connection_id').value = response.last_chat_id;
                 } else {
-					console.log('none');
+					//console.log('none');
                 }
             }
         });

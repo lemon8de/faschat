@@ -63,7 +63,7 @@ $('#SendTextForm').submit(function(e){
             'chat_id' : send_chat_id,
             'message' : send_chat_message,
         }
-        console.log(request_body);
+        //console.log(request_body);
         $.ajax({
             url: '../php_api/send_message.php',
             type: 'POST',
@@ -71,7 +71,7 @@ $('#SendTextForm').submit(function(e){
             dataType: 'json',
             success: function (response) {
                 if (response.success) {
-                    console.log(response);
+                    //console.log(response);
                     document.getElementById('DirectChatBox').insertAdjacentHTML('beforeend', response.blue_box_html);
                     document.getElementById('DirectChatBox').scrollTop = document.getElementById('DirectChatBox').scrollHeight;
                     document.getElementById('FasChatInputBoxMSG').value = "";

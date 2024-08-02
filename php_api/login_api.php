@@ -47,9 +47,9 @@
                     header('location: ../pages/actionresetpassword.php');
                     exit;
                 } else {
-                    $_SESSION['reset_password_not_approved'] = "You have a pending reset password request. Wait for admin confirmation";
-                    header('location: ../pages/signin.php');
-                    exit;
+                    //$_SESSION['reset_password_not_approved'] = "You have a pending reset password request. Wait for admin confirmation";
+                    //header('location: ../pages/signin.php');
+                    //exit;
                 }
             }
             $_SESSION['login_attempt_failed'] = "Sign in Failed. Verify your credentials";

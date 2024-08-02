@@ -41,6 +41,7 @@
                     </div>
                 </div>
             ';
+            $last_whitechat_id = $x['id'];
         } else {
             //blue
             echo '
@@ -62,4 +63,7 @@
         document.getElementById('DirectChatBox').scrollTop = document.getElementById('DirectChatBox').scrollHeight;
     </script>
     ";
+    if (!isset($last_whitechat_id)) {
+        $last_whitechat_id = "";
+    }
 ?>
