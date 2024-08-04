@@ -29,8 +29,7 @@
         // MySQL
         $sql = "INSERT INTO user_accounts (username, password) VALUES ('$username','$password')";
         $stmt = $conn->prepare($sql);
-        $params = array($username);
-        $stmt->execute($params);
+        $stmt->execute();
         $conn = null;
 
         $_SESSION['registration_success'] = "Registration Complete. Await confirmation from admin";
